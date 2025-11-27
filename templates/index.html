@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Password Strength Analyzer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Password Strength Analyzer</h1>
+      <p class="sub">Real-time strength meter ● dictionary check ● suggestions</p>
+    </header>
+
+    <section class="card">
+      <label for="pwd" class="label">Enter password</label>
+      <div class="input-row">
+        <input id="pwd" type="password" placeholder="Type your password..." autocomplete="new-password">
+        <button id="showBtn" class="ghost">Show</button>
+      </div>
+
+      <div class="meter-row">
+        <div class="circle-wrap">
+          <!-- SVG circular meter -->
+          <svg class="meter" viewBox="0 0 120 120">
+            <defs>
+              <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ff4d4d"/>
+                <stop offset="50%" stop-color="#ffb84d"/>
+                <stop offset="100%" stop-color="#4cd137"/>
+              </linearGradient>
+            </defs>
+            <circle class="meter-bg" cx="60" cy="60" r="48"></circle>
+            <circle class="meter-fg" cx="60" cy="60" r="48" stroke="url(#grad)"></circle>
+            <text class="meter-text" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+              <tspan id="scoreText">0</tspan><tspan font-size="10">%</tspan>
+            </text>
+          </svg>
+        </div>
+
+        <div class="info">
+          <div class="rating">
+            <span id="ratingText">Very Weak</span>
+          </div>
+          <div class="entropy">Entropy: <span id="entropyText">0</span> bits</div>
+          <div class="length">Length: <span id="lenText">0</span></div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="checkBtn" class="primary">Run full check</button>
+        <button id="copyBtn" class="ghost">Copy password</button>
+      </div>
+
+      <div id="warn" class="warning" hidden>⚠ This password appears in common password lists.</div>
+
+      <div class="suggestions">
+        <h3> Suggestions</h3>
+        <ul id="suggestList">
+          <li>Type a password to get suggestions.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="note">
+      Tip: Use a passphrase (3+ random words) or a password manager for best security.
+    </footer>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
