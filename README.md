@@ -181,12 +181,6 @@ git push
 
 Render will automatically rebuild and update your live website.
 
-🧪 API Test
-
-Using curl:
-
-curl -X POST -d "password=test123" https://your-url.onrender.com/api/check
-
 🛡️ Why This Project Is Useful
 
 Demonstrates cybersecurity concepts
@@ -205,5 +199,5 @@ This project is for educational and personal use.
 
 🙋‍♂️ Author
 
-Made by: Natesha
-Assistant support: ChatGPT
+Made by: Bangla Natesha
+Assistant support: ChatGPT,Other A.I Tools
